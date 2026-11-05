@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081321">
+  <meta name="description" content="An Ethereum case study following stolen Binance assets through transfers, swaps, collateralized borrowing and observed endpoints.">
+  <title>Binance Case Tracking · Ethereum</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#flow">Skip to the fund flow</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Binance Case Tracking home">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 16h7m8-8h7m-7 16h7M12 16l8-8m-8 8 8 8" stroke="currentColor" stroke-width="2"/><circle cx="5" cy="16" r="3" fill="currentColor"/><circle cx="27" cy="8" r="3" fill="currentColor"/><circle cx="27" cy="24" r="3" fill="currentColor"/></svg>
+        <span>BINANCE <span class="brand-secondary">CASE TRACKING</span></span>
+      </a>
+      <nav aria-label="Main navigation"><a href="#flow">Fund flow</a><a href="#paths">Trace paths</a><a href="#scope">Evidence &amp; scope</a></nav>
+      <a class="github-link" href="https://github.com/fuqishuang228/Binance_Case_Traking" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro content-width" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> ETHEREUM / DOWNSTREAM INVESTIGATION</p>
+        <h1 id="page-title">Follow the funds<br><span>beyond the theft.</span></h1>
+        <p class="intro-description">A trace of the Binance case: how stolen assets move, change form, and reach their observed destinations.</p>
+        <a class="text-link" href="#flow">Explore the case <span aria-hidden="true">↓</span></a>
+      </div>
+      <aside class="case-meta" aria-label="Collection metadata">
+        <div class="meta-heading"><span>CASE FILE</span><span class="chain-tag">ETHEREUM</span></div>
+        <dl>
+          <div><dt>Observation</dt><dd>As of collection</dd></div>
+          <div><dt>Collection cutoff block</dt><dd id="snapshot-block">26,339,145</dd></div>
+          <div><dt>Reading the amounts</dt><dd>Asset quantities, <br>not portfolio valuations</dd></div>
+        </dl>
+        <p>Holdings describe the collection cutoff. They are not live balances.</p>
+      </aside>
+    </section>
+
+    <section class="flow-section content-width" id="flow" aria-labelledby="flow-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / THE BIG PICTURE</p><h2 id="flow-title">From initial receipt to observed outcomes.</h2></div>
+        <p class="section-summary">A compact view of the principal routes. <br>Intermediate wallets are grouped for readability.</p>
+      </div>
+      <figure class="flow-figure">
+        <div class="figure-toolbar"><span><span class="status-dot" aria-hidden="true"></span> BINANCE CASE TRACKING</span><div><button type="button" id="expand-flow">Expand diagram <span aria-hidden="true">↗</span></button><a href="./assets/case-flow.svg" download="binance-case-flow.svg">Download SVG <span aria-hidden="true">↓</span></a></div></div>
+        <a class="diagram-link" href="./assets/case-flow.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the fund-flow diagram at full size"><img id="case-diagram" src="./assets/case-flow.svg" alt="Compact Binance Ethereum fund flow. The four route details and observed outcomes are listed below."></a>
+        <figcaption><span>Transfers · swaps · collateral &amp; borrowing · observed holdings<span class="mobile-diagram-hint">Scroll the diagram sideways, or expand it above.</span></span><a class="text-link" href="./full-flow.html">Explore detailed flow <span aria-hidden="true">→</span></a></figcaption>
+      </figure>
+    </section>
+
+    <section class="paths-section content-width" id="paths" aria-labelledby="paths-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / FOLLOW A ROUTE</p><h2 id="paths-title">The paths behind the picture.</h2></div><p class="section-summary">Select a route for its traced outcomes <br>and supporting transactions.</p></div>
+      <div class="route-tabs" role="tablist" aria-label="Fund-flow routes" id="route-tabs"></div>
+      <div class="route-panel" id="route-panel" role="tabpanel" tabindex="0" aria-live="polite">
+        <p class="loading-message">Loading the case record…</p>
+      </div>
+      <p class="quantity-note">Selected routes do not form a complete partition of the case. Amounts are asset quantities, not USD valuations; different currencies are not added together. Rounded summaries retain precise source records.</p>
+    </section>
+
+    <section class="scope-section content-width" id="scope" aria-labelledby="scope-title">
+      <div class="scope-intro"><p class="eyebrow">03 / EVIDENCE &amp; SCOPE</p><h2 id="scope-title">Read the trace <br>with its boundaries.</h2><p>This is an observed fund-flow record. A transfer alone does not establish who controls an address.</p><a class="text-link" href="./assets/case-data.json" download="case-data.json">Inspect the case data <span aria-hidden="true">↗</span></a></div>
+      <div class="scope-items">
+        <article><span class="scope-number">01</span><div><h3>Holdings have a cutoff.</h3><p>“Still held” means held as of collection at the stated block. Later activity is outside this view.</p></div></article>
+        <article><span class="scope-number">02</span><div><h3>Borrowing is not a swap.</h3><p>USDT deposited as Aave collateral remains a collateral position. Borrowed ETH creates a separate debt relationship.</p></div></article>
+        <article><span class="scope-number">03</span><div><h3>Bridges mark an Ethereum exit.</h3><p>Bridge paths record source-chain activity. They do not imply that destination-chain funds have been traced.</p></div></article>
+        <article><span class="scope-number">04</span><div><h3>Attribution is narrower than a wallet balance.</h3><p>Route outcomes follow traced funds. A wallet receiving other funds can have a larger total balance.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer content-width"><span>BINANCE CASE TRACKING</span><p>Ethereum case study · collected evidence, summarized for inspection</p><a href="https://github.com/fuqishuang228/Binance_Case_Traking" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a></footer>
+
+  <dialog id="flow-dialog" aria-label="Expanded fund-flow diagram"><div class="dialog-toolbar"><span>BINANCE CASE TRACKING / ETHEREUM</span><button type="button" id="close-flow" aria-label="Close expanded diagram">Close <span aria-hidden="true">×</span></button></div><div class="dialog-image"><img src="./assets/case-flow.svg" alt="Expanded Binance Ethereum fund-flow diagram"></div><p>On a small screen, scroll horizontally to inspect the full diagram.</p></dialog>
+</body>
+</html>
